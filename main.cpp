@@ -39,14 +39,34 @@ void readFile(vector<string>& Vector){
 }
 
 void fillTree(MyBST& tree,vector<string>& vec){
+    //comparar los valores y para compararlos
+    int count=0;
+    string aux=vec[0];
     
+    for(int i=0;i<vec.size();i++){
+        //comparamos si la ip actual es igual que la anterior y la sumamos al contador
+        if(vec[i]==aux){
+            count++;
+        }else{
+            //agregamos cuantas veces se repitio la ip como la key y la ip para que la agregue
+            //al vector de las ip que se repiten la misma cantidad de veces
+            tree.insert(count,aux);
+            //actualizamos valores a la nueva ip
+            aux=vec[i];
+            count=1;
+        }
+    }
 }
 
 int main(){
     //generamos nuestro vector
     vector<string>* ips=new vector<string>();
+    //generamos el arbol
+    MyBST tree;
     //leemos y guardamos en un vector todas las ip
     readFile(*ips);
     //contamos cuantas veces se repite cada ip
+    fillTree(tree,*ips);
+    cout<<tree.root->left->ipes[0];
     return 0;
 }

@@ -245,24 +245,31 @@ int MyBST::height(){
 //------------------------------------------ insert ----------------------------------------------
 //Complejidad de:O(log(n))
 //inserta el valor indicado en el arbol especificado
-MyNodeBST* MyBST::insert(MyNodeBST* node, int data) {
+MyNodeBST* MyBST::insert(MyNodeBST* node, int data, string ip) {
     //agregamos el nodo cuando llega al final del arbol
     if (node==nullptr){
         this->size++;
         return new MyNodeBST(data);
-    } 
+    }
+
+    //comparamos si el key es igual
+    if(node->data==data){
+        //agregamos la ip que se repitio la cantidad de veces de su key
+        node->ipes.push_back(ip);
+        return node;
+    }
     //navegamos en el arbol para encontrar la posicion correcta del nuevo nodo y lo asigna en la posicion 
     //correcta del ultimo nodo que le corresponde
     if (data<node->data){
-        node->left = insert(node->left, data);
+        node->left = insert(node->left, data,ip);
     }else{
-        node->right = insert(node->right, data);
+        node->right = insert(node->right, data,ip);
     }
     return node;
 }
 
-bool MyBST::insert(int data) {
-    this->root=insert(this->root,data);
+bool MyBST::insert(int data,string ip) {
+    this->root=insert(this->root,data,ip);
     if(root!=nullptr){
         return true;
     }else{

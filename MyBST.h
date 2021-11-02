@@ -3,13 +3,13 @@
 
 #include <vector>
 #include <string>
+#include <string>
 
 struct MyNodeBST{
     int data;
-    int count;
     MyNodeBST* left;
     MyNodeBST* right;
-    vector<std::string> ipes;
+    std::vector<std::string> ipes;
 
     MyNodeBST(int data){
         this->data=data;
@@ -18,7 +18,7 @@ struct MyNodeBST{
 };
 
 class MyBST{
-    private:
+    public:
         MyNodeBST* root;
         int size;
         void preorder(MyNodeBST*);
@@ -28,11 +28,11 @@ class MyBST{
         int height(MyNodeBST*);
         int whatLevelIAm(int,MyNodeBST*);
         int steps(int,MyNodeBST*);
-        MyNodeBST* insert(MyNodeBST*,int);
+        MyNodeBST* insert(MyNodeBST*,int,std::string);
         MyNodeBST* remove(MyNodeBST*,int);
         bool ancestors(MyNodeBST*,int);
         bool search(int,MyNodeBST*);
-    public:
+    
         int level;
         MyBST();
         int getSize();
@@ -41,7 +41,7 @@ class MyBST{
         void visit(int);
         int height();
         int whatLevelIAm(int);
-        bool insert(int);
+        bool insert(int,std::string);
         void ancestors(int);
         MyNodeBST* succesor(MyNodeBST*);
         bool remove(int);
