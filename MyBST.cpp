@@ -318,3 +318,21 @@ MyNodeBST* MyBST::remove(MyNodeBST* node, int data){
 bool MyBST::remove(int data){
     remove(this->root,data);
 }
+
+void MyBST::reverseOrder(MyNodeBST* node, int n,int i){
+    if (node == nullptr){
+        return;
+    }else{
+        reverseOrder(node->right,n,i);
+        if(++i<n){
+            cout<<node->data<<endl;
+            //cout<<i<<","<<n<<endl;
+            reverseOrder(node->left,n,i);
+        } 
+    } 
+}
+
+
+void MyBST::reverseOrder(int n, int i){
+    this->reverseOrder(this->root,n,i);
+}

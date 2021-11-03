@@ -58,6 +58,7 @@ void fillTree(MyBST& tree,vector<string>& vec){
     }
 }
 
+
 int main(){
     //generamos nuestro vector
     vector<string>* ips=new vector<string>();
@@ -67,6 +68,8 @@ int main(){
     readFile(*ips);
     //contamos cuantas veces se repite cada ip
     fillTree(tree,*ips);
-    cout<<tree.root->left->ipes[0];
+    //imprimimos los 5 valores mas grandes
+    tree.reverseOrder(5,0);
+    cout<<tree.root->right->right->right->data;
     return 0;
 }
