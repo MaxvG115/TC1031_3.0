@@ -69,7 +69,7 @@ int main(){
     //contamos cuantas veces se repite cada ip
     fillTree(tree,*ips);
     //imprimimos los 5 valores mas grandes
-    tree.reverseOrder(5,0);
+    tree.reverseOrder(5);
     cout<<tree.root->right->right->right->data;
     return 0;
 }
