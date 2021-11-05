@@ -319,20 +319,22 @@ bool MyBST::remove(int data){
     remove(this->root,data);
 }
 
-void MyBST::reverseOrder(MyNodeBST* node, int n,int i){
+int MyBST::reverseOrder(MyNodeBST* node, int n){
     if (node == nullptr){
-        return;
+        return 0;
     }else{
-        reverseOrder(node->right,n,i);
-        if(++i<n){
-            cout<<node->data<<endl;
-            //cout<<i<<","<<n<<endl;
-            reverseOrder(node->left,n,i);
+        int count = reverseOrder(node->right,n,i);
+        if(count <= n){
+            for (int i = 0; count < this->ipes.size() && count <= 5; i++){
+                cout << node->ipes[i];
+                count++; 
+            }
         } 
+        return count;
     } 
 }
 
 
-void MyBST::reverseOrder(int n, int i){
-    this->reverseOrder(this->root,n,i);
+int MyBST::reverseOrder(int n){
+    this->reverseOrder(this->root,n);
 }
