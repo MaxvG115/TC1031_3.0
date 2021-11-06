@@ -18,7 +18,7 @@ struct MyNodeBST{
 };
 
 class MyBST{
-    public:
+    private:
         MyNodeBST* root;
         int size;
         void preorder(MyNodeBST*);
@@ -33,7 +33,7 @@ class MyBST{
         bool ancestors(MyNodeBST*,int);
         bool search(int,MyNodeBST*);
         int reverseOrder(MyNodeBST*,int);
-    
+    public:
         int level;
         MyBST();
         int getSize();
