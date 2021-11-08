@@ -32,7 +32,7 @@ class MyBST{
         MyNodeBST* remove(MyNodeBST*,int);
         bool ancestors(MyNodeBST*,int);
         bool search(int,MyNodeBST*);
-        int reverseOrder(MyNodeBST*,int);
+        int reverseOrder(MyNodeBST*,int,int);
     public:
         int level;
         MyBST();
