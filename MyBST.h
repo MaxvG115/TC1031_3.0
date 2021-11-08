@@ -1,3 +1,11 @@
+/*===============================*
+<Autores>
++Vicente Viera Guízar, ID: A01639784
++Maximiliano Villegas Garcia. ID: A01635825
++Emma Gabriela Alfaro De la Rocha. ID: A01740229
+</Autores>
+=================================*
+*/
 #ifndef MYBST
 #define MYBST
 
@@ -6,15 +14,15 @@
 #include <string>
 
 struct MyNodeBST{
-    int data;
-    MyNodeBST* left;
-    MyNodeBST* right;
-    std::vector<std::string> ipes;
+  int data;
+  MyNodeBST* left;
+  MyNodeBST* right;
+  std::vector<std::string> ipes;
 
-    MyNodeBST(int data){
-        this->data=data;
-        this->left=this->right=nullptr;
-    }
+  MyNodeBST(int data){
+    this->data=data;
+    this->left=this->right=nullptr;
+  }
 };
 
 class MyBST{
@@ -48,5 +56,4 @@ class MyBST{
         bool remove(int);
         int reverseOrder(int);
 };
-
 #endif
