@@ -346,6 +346,7 @@ bool MyBST::remove(int data){
   return remove(this->root,data);
 }
 
+//Complejidad de: O(nlog(n))
 int MyBST::reverseOrder(MyNodeBST* node, int n,int count){
     if (node == nullptr){
          return 0;
@@ -358,33 +359,6 @@ int MyBST::reverseOrder(MyNodeBST* node, int n,int count){
         count+=reverseOrder(node->left,n,count);
         return count;
     }
-        
-    
-    /*if(node == NULL){
-        return 0;
-    }else{
-        int count=reverseOrder(node->right,n);
-        
-        for(int i=0;i<node->ipes.size() && count<n;i++){
-            cout<<node->ipes[i]<<endl;
-            count++;
-        }
-        reverseOrder(node->left,count);
-        return count;
-    }*/
-
-    /*if (node == nullptr){
-        return 0;
-    }else{
-        int count = reverseOrder(node->right,n);
-        if(count <= n){
-            for (int i = 0; count < node->ipes.size() && count < 5; i++){
-                cout << node->ipes[i]<<endl;
-                count++; 
-            }
-        } 
-        return count;
-    } */
 }
 
 //Complejidad de:O(n)
